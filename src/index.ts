@@ -1,12 +1,16 @@
+let message: string;
+
+// variationName: type -> string, number, boolean, null, undefined, object, array, function
+
 let age: number = 30;
 
 let userName: string = "John";
 
 let isAdult: boolean = true;
 
-let hobbies: string[] = ["Sports", "Gaming"];
+let hobbies: string[] = ["Sports", "Gaming", "Reading", "Traveling"];
 
-let address: [string, number] = ["Street", 99];
+let address: [string, number] = ["Street", 99]; // Tuple
 
 function add(a: number, b: number) {
   return a + b;
@@ -19,13 +23,13 @@ type Car = {
   chargeVoltage?: number;
 };
 
-let fordCard: Car = {
+let fordCar: Car = {
   model: "Mustang",
   year: 2021,
   brand: "Ford",
 };
 
-let teslaCard: Car = {
+let teslaCar: Car = {
   model: "Model S",
   brand: "Tesla",
   year: 2021,
@@ -44,7 +48,7 @@ let secondaryColorCode: ColorCodeType = [0, 255, 0];
 // Union Types
 type InputValue = string | number | boolean | undefined;
 
-const value: InputValue = undefined;
+const value: InputValue = "Hello World";
 
 type UserStatusType = "active" | "inactive" | "pending";
 
