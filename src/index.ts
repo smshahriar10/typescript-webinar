@@ -131,3 +131,32 @@ const manager: ManagerEmployeeInterface = {
   department: "Engineering",
   reports: [employee1, employee2],
 };
+
+type JsonValue = string | number | boolean | null | JsonValue[] | JsonObject;
+
+type JsonObject = {
+  [key: string]: JsonValue;
+};
+
+const jsonData: JsonObject = {
+  id: 1,
+  role: "Software Engineer",
+  jobTitle: "Frontend Developer",
+  salary: 100000,
+  isMarried: false,
+  projects: ["Project A", "Project B", 30, null, true],
+  address: {
+    street: "Street",
+    number: 99,
+  },
+};
+
+// Functions
+
+type GreetFunctionType = (a: string) => string;
+
+const greetFunction: GreetFunctionType = (name: string) => `Hello ${name}`; // Function
+
+// const sum = (a: number, b: number) => a + b;
+
+// let greet: (a: string) => string; // Function Type
