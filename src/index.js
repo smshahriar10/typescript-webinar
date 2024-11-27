@@ -6,9 +6,6 @@ let userName = "John";
 let isAdult = true;
 let hobbies = ["Sports", "Gaming", "Reading", "Traveling"];
 let address = ["Street", 99]; // Tuple
-function add(a, b) {
-    return a + b;
-}
 let fordCar = {
     model: "Mustang",
     year: 2021,
@@ -73,7 +70,98 @@ const jsonData = {
         number: 99,
     },
 };
-console.log(jsonData.unknownKey.value);
+function makeDate(mOrTimestamp, d, y) {
+    if (d !== undefined && y !== undefined) {
+        return new Date(y, mOrTimestamp, d);
+    }
+    else {
+        return new Date(mOrTimestamp);
+    }
+}
 const greetFunction = (name) => `Hello ${name}`; // Function
 // const sum = (a: number, b: number) => a + b;
 // let greet: (a: string) => string; // Function Type
+// Class
+class Person {
+    constructor(name = "Mostafiz", age) {
+        this.name = name;
+        this.age = age;
+    }
+    greet() {
+        return `Hello ${this.name}`;
+    }
+}
+const person1 = new Person("John", 30);
+const person2 = new Person("Jane");
+const person3 = new Person();
+console.log(person1.greet());
+console.log(person2.greet());
+console.log(person3.greet());
+// Generics
+// <Type>
+function identity(arg) {
+    return arg;
+}
+const output = identity({
+    name: "John",
+    age: 30,
+});
+const array1 = [1, 2, 3, 4, 5];
+const array2 = ["John", "Jane", "Doe"];
+function reverseArray(array) {
+    return array.reverse();
+}
+const reverseStringArray = reverseArray(array1);
+// type StringBox = Box<string>;
+// type NumberBox = Box<number>;
+const box1 = { content: "Hello World" };
+const box2 = { content: 100 };
+// const box3: Box<boolean> = { content: true };
+function add(a, b) {
+    return `${a} + ${b}`;
+}
+// const sum = add<number, number>("10", 20);
+// Enums
+var Role;
+(function (Role) {
+    Role["Admin"] = "admin";
+    Role["User"] = "user";
+})(Role || (Role = {}));
+const user = {
+    id: 1,
+    name: "John",
+    email: "john@example.com",
+    role: Role.Admin,
+};
+const user2 = {
+    id: 2,
+    name: "Jane",
+    email: "jane@example.com",
+    role: Role.User,
+};
+// Top Types
+let x;
+// x = { name: "John" };
+// x = 10;`
+// x = true;
+// x = "Hello World";
+// x = [1, 2, 3];
+// x = null;
+// x = undefined;
+// x = {};
+console.log(x.unknownProperty);
+let y;
+// y = { name: "John" };
+// y = 10;
+// y = true;
+y = "Hello World";
+// y = [1, 2, 3];
+// y = null;
+// y = undefined;
+console.log(y.toFixed(2));
+// Bottom Type
+let z;
+// z = 10;
+const fetchData = new Promise((resolve, reject) => {
+    const response = {};
+});
